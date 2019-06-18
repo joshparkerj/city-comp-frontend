@@ -1,4 +1,5 @@
 #Ignoring
 node_modules
+/public/vendor
 /node_modules
-
+.DS_Store

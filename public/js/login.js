@@ -34,11 +34,10 @@ $(document).ready(function() {
                     console.log("Login was a success:")
                     console.log(succ)
                     localStorage.setItem("token", succ)
+                    window.location.href = "http://localhost:3000/landing";
                 }
             },
-            error: onError("error")
-
-        function onError(err) {
+            error: function onError(err) {
             console.log("Error hit")
             if(err == ""){
 
@@ -47,29 +46,27 @@ $(document).ready(function() {
             $('.loginErrors').empty().append(p);
             }
           }
+            });
+        });
     });
-
 });
-});
-
-
-function toggleButton(){
-    var subButtonVal = $('#submitButton').text();
-    console.log(subButtonVal)
-    if(subButtonVal == 'Login'){
-        $('#submitButton').text('Register');
-        $('#create').text('Login');
-        $('#submitButton').removeClass("login100-form-btn").addClass("login1-form-btn");
-        $('#submitButton').attr('id', 'register');
-
-    }else{
-        $('#register').text('Login');
-        $('#create').text('Create Account');
-        $('#register').removeClass("login1-form-btn").addClass("login100-form-btn");
-        $('#register').attr('id', 'submitButton');
-    }
-}
-
-function register(){
-    console.log("REGISTER CLICKEDDDDD!")
-}
+            function toggleButton(){
+                var subButtonVal = $('#submitButton').text();
+                console.log(subButtonVal)
+                if(subButtonVal == 'Login'){
+                    $('#submitButton').text('Register');
+                    $('#create').text('Login');
+                    $('#submitButton').removeClass("login100-form-btn").addClass("login1-form-btn");
+                    $('#submitButton').attr('id', 'register');
+            
+                }else{
+                    $('#register').text('Login');
+                    $('#create').text('Create Account');
+                    $('#register').removeClass("login1-form-btn").addClass("login100-form-btn");
+                    $('#register').attr('id', 'submitButton');
+                }
+            }
+            
+            function register(){
+                console.log("REGISTER CLICKEDDDDD!");
+            }
