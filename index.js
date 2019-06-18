@@ -24,6 +24,6 @@ app.get('/landing', function homepage(req, res){
 
 
 
-app.listen(process.env.Port || 3000,() =>{
-    console.log("Server is listening on port 3000!")
+app.listen(process.env.Port || 3012,() =>{
+    console.log("Server is listening on port 3012!")
 });

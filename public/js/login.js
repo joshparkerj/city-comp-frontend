@@ -9,7 +9,7 @@ $(document).ready(function() {
     }).on('click','#register', e=>{
         register();
     });
-    
+
 
     $('#submitButton').on('click', e=>{
         e.preventDefault();
@@ -19,7 +19,7 @@ $(document).ready(function() {
         $.ajax({
             method: 'POST',
             // contentType: 'application/json; charset=utf-8',
-            url: "http://localhost:8081/fakelogin",
+            url: "http://localhost:8081/login",
             data: JSON.stringify({ "username": $('#username').val(), "password": $('#password').val()}) ,
             success: function loginSuccess(succ){
                 console.log("Succ:"+succ);
@@ -58,7 +58,7 @@ $(document).ready(function() {
                     $('#create').text('Login');
                     $('#submitButton').removeClass("login100-form-btn").addClass("login1-form-btn");
                     $('#submitButton').attr('id', 'register');
-            
+
                 }else{
                     $('#register').text('Login');
                     $('#create').text('Create Account');
@@ -66,7 +66,7 @@ $(document).ready(function() {
                     $('#register').attr('id', 'submitButton');
                 }
             }
-            
+
             function register(){
                 console.log("REGISTER CLICKEDDDDD!");
             }
